@@ -27,4 +27,13 @@ public class PeopleArray {
         }
         return null;
     }
+    public List<Person> findAll(PersonPredicate filter){
+        ArrayList personsthat = new ArrayList<>();
+        for (Person person : people) {
+            if (filter.test(person)){
+                personsthat.add(person);
+            }
+        }
+        return personsthat;
+    }
 }
